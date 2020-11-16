@@ -4,20 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Berkenloop</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
     <link rel="stylesheet" href="css/hoofdstijl.css">
-</head>
-<body class="gridBodyContainer">
-<h1>Homepagina</h1>
-<main>
-    <article>
-        <h2>Formulier</h2>
-            <form>
-                <fieldset>
 
+</head>
+<body class="gridContBody">
+    <h1>Berkenloop</h1>
+<main class="gridMainCont">
+
+    <article>
+        <h2>Inschrijving</h2>
+            <form id="inschrijving" action="html/bevestiging.html" method="get">
+                <fieldset class="gridContForm">
+                    <legend>Inschrijving</legend>
+                    <label for="naam">Naam en Voornaam</label>
+                    <input type="text" id="naam" name="naam" required>
+                    <label for="strava">Adres</label>
+                    <input type="text" id="strava" name="strava" required>
+                    <label for="email">email</label>
+                    <input type="email" id="email" name="email" required>
+                    <label>Afstand</label>
+                    <fieldset id="afstand">
+                        <legend class="verborgen">Maat</legend>
+                        <label for="5km"><input id="5km" type="radio" name="afstand" value="5 km">5 km</label>
+                        <label for="10 km"><input id="10 km" type="radio" name="afstand" value="10 km">10 km</label>
+                    </fieldset>
                 </fieldset>
 
             </form>
     </article>
+    <aside>
+        <h2>Kaart</h2>
+        <img class="kaart" src="media/Berkenloop kaart 2.png" alt="kaartje"/>
+    </aside>
 </main>
 </body>
 </html>

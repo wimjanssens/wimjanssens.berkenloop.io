@@ -22,3 +22,33 @@ body{
     max-width: calc(100vw - 34px);
 
 }
+img{
+    max-width: 100%;
+}
+/*---------------------- Grid Body -------------------*/
+.gridContBody {
+    display: grid;
+    grid-template-columns: 1fr minmax(200px, 800px) 1fr;
+    grid-template-rows: 50px 1fr;
+}
+h1, main{
+    grid-column: 2/3;
+}
+/*main {
+    grid-row: 2/3;
+}*/
+
+/*--------------- Formulier ---------------------------*/
+.gridContForm{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit,2rem);
+    grid-row-gap: 0.5rem;
+    margin: 1rem 0;
+    align-items: center;
+}
+#afstand {
+    border:none;
+    padding-left: 0;
+    margin-left: 0;
+}
