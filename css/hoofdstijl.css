@@ -1,3 +1,12 @@
+:root{
+    --achtergrond:white; /*achtergrond*/
+    --letter:hsl(0,0%,20%); /* header*/
+    --bijnawit:hsl(0, 0%, 87%); /*hover menu, tekst*/
+    --groen:#1ea418;
+    --blauw:#1a74e3;
+}
+
+/*------------------------ lettertype, lettergrootte en kleuren --------------------------------------------*/
 .verborgen {
     position: absolute;
     left: -10000px;
@@ -5,4 +14,11 @@
     width: 1px;
     height: 1px;
     overflow: hidden;
+}
+body{
+    background-color:var(--achtergrond);
+    color:var(--letter);
+    font-family: "Roboto", Verdana, serif;
+    max-width: calc(100vw - 34px);
+
 }
