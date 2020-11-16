@@ -14,23 +14,29 @@
 
     <article>
         <h2>Inschrijving</h2>
-            <form id="inschrijving" action="html/bevestiging.html" method="get">
+            <!--<a href="https://docs.google.com/forms/d/e/1FAIpQLSdPKepylbMYQGgZdU9vaXUkBVW093FCe6AzRwkvdSVfjTjJrw/viewform?usp=sf_link">Inschrijven</a>-->
+        <script type="text/javascript">var submitted=false;</script>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location='html/bevestiging.html';}"></iframe>
+
+
+        <form id="inschrijving" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdPKepylbMYQGgZdU9vaXUkBVW093FCe6AzRwkvdSVfjTjJrw/formResponse" method="post" target="hidden_iframe"
+              onsubmit="submitted=true;">
                 <fieldset class="gridContForm">
-                    <legend>Inschrijving</legend>
+<!--                    <legend>Inschrijving</legend>-->
                     <label for="naam">Naam en Voornaam</label>
-                    <input type="text" id="naam" name="naam" required>
+                    <input type="text" id="naam" name="entry.1485118755" required>
                     <label for="strava">Adres</label>
-                    <input type="text" id="strava" name="strava" required>
+                    <input type="text" id="strava" name="entry.346604813" required>
                     <label for="email">email</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="entry.791737043" required> <!--entry.791737043-->
                     <label>Afstand</label>
                     <fieldset id="afstand">
                         <legend class="verborgen">Maat</legend>
-                        <label for="5km"><input id="5km" type="radio" name="afstand" value="5 km">5 km</label>
-                        <label for="10 km"><input id="10 km" type="radio" name="afstand" value="10 km">10 km</label>
+                        <label for="5km"><input id="5km" type="radio" name="entry.897293074_sentinel" value="5 km">5 km</label>
+                        <label for="10 km"><input id="10 km" type="radio" name="entry.897293074_sentinel" value="10 km">10 km</label>
                     </fieldset>
                 </fieldset>
-
+                <input type="submit" value="Verzend">
             </form>
     </article>
     <aside>
