@@ -81,7 +81,7 @@ function printPagina(){
         einde = -1;
         stap = -1;
     }
-    /*ik wilde perce een variabele for, het is gelukt. Maar misschien is 2 for's wel beter*/
+    /*ik wilde per se een variabele for, het is gelukt. Maar misschien is 2 for's wel beter*/
     for (; i !== einde ; i += stap){
         let categorie = new Categorie(i);
         htmlString += categorie.maakHTMLCategorie();
