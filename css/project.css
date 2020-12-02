@@ -1,0 +1,678 @@
+:root{
+    --donkergrijs:hsl(0, 0%, 20%); /*achtergrond*/
+    --lichtergrijs:hsl(0,0%,30%); /* header*/
+    --bijnawit:hsl(0, 0%, 87%); /*hover menu, tekst*/
+    --groen:#1ea418;
+    --blauw:#1a74e3;
+}
+
+/*------------------------ lettertype, lettergrootte en kleuren --------------------------------------------*/
+.verborgen {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}
+
+body{
+    background-color:var(--donkergrijs);
+    color:var(--bijnawit);
+    font-family: /*"Roboto",*/ Verdana, serif;
+    max-width: calc(100vw - 34px);
+
+}
+h2 {
+    font-weight: normal;
+    font-size: 2rem;
+    margin-top: 0;
+}
+h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color:var(--blauw);
+    margin-top: 0.5rem;
+    text-decoration: underline;
+}
+.grid-home-main h3, .kleine-titel{
+    font-size: 1.2rem;
+    font-weight: normal;
+    color:var(--bijnawit);
+    margin-top: 0.5rem;
+    text-decoration: underline;
+}
+.vet {
+    font-weight: bold;
+}
+.onderlijnen{
+    text-decoration: underline;
+}
+.grid-header1 a, .gridb-item-footer a, .gridContainerContact a, .gridb2-item-footer a{
+    color:var(--groen);
+}
+.filter a{
+    color:var(--blauw);
+}
+a, .grid-header1 a:hover, .gridb-item-footer a:hover, .gridContainerContact a:hover, .filter a:hover, .gridb2-item-footer a:hover{
+    color: var(--bijnawit);
+
+}
+
+.grid-header{
+    background-color: var(--lichtergrijs);
+}
+
+.hoofdmenu a{
+    font-size: 1.2rem;
+}
+.foutFeedback, #foutVerzendKnop {
+    font-size: 0.8rem;
+}
+
+
+/*----------------------- Gemeenschappelijke layout alle pagina's ------------------------ */
+
+/*---- Body: grid van body van alle pagina's behalve producten (aside)----------*/
+.gridContainerBody {
+    display: grid;
+    grid-template-areas:    '. gheader .'
+                            '. gmain .'
+                            '. gfooter .';
+    grid-template-columns: 1fr minmax(auto,1200px) 1fr;
+    grid-template-rows: 120px 1fr 40px;
+    /*justify-items: center;*/
+    min-height: 96vh; /* footer op de bodem ook bij weinig content */
+
+}
+.gridContainerBody > .gridb-item-header {
+    grid-area: gheader;
+}
+.gridContainerBody > .gridb-item-main {
+    grid-area: gmain;
+}
+.gridContainerBody > .gridb-item-footer{
+    grid-area: gfooter;
+}
+main > article{
+    padding: 1rem;
+}
+/*----------------------------------  Header layout: grid --------------------------------------- */
+/*subgrid - Header van alle pagina's: omvat topheader, logo + zoekbalk, hoofdmenu*/
+.grid-header{
+    display: grid;
+    grid-template-areas:    'gheader1'
+                            'gheader2'
+                            'gheader3';
+    grid-template-rows: 20px 50px 40px;
+    padding: 0 0 0 1rem;
+}
+.grid-header > .grid-header1{
+    grid-area: gheader1;
+}
+.grid-header > .grid-header2{
+    grid-area: gheader2;
+}
+.grid-header > .hoofdmenu{
+    grid-area: gheader3;
+}
+
+/*---- Topheader = grid-header1 (grid-item van grid-header) ----*/
+/* flexbox */
+.grid-header1 ul{
+    display:flex;
+    padding-left: 0;
+    list-style: none;
+    margin:auto;
+}
+.grid-header1 ul li{
+    flex-grow:1;
+    width: 50%;
+    text-align: center;
+}
+.grid-header1 a {
+    /*padding: 0 2rem 0 0;*/
+    text-decoration: none;
+}
+
+/*------------------------------------------- Menu ---------------------------*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/* todo active menu kleuren */
+.hoofdmenu ul {
+    list-style: none; /*nummeringstekens*/
+    display:flex;
+    padding: 0 ;
+    margin: 0;
+}
+
+.hoofdmenu ul ul {
+    flex-direction: column; /*submenu verticaal */
+}
+/*.hoofdmenu > ul > li{*/ /*verdelen over de hele breedte -> niet zo mooi */
+/*    flex-grow: 1;*/
+/*    width:25%;*/
+/*}*/
+
+.hoofdmenu a{
+
+    text-decoration: none;
+    box-sizing: border-box;
+    width: 100%;
+    /*background-color: grey;*/
+    display: block;
+    color:var(--bijnawit);
+}
+/*------ enkel hoofdmenu-balk ------------*/
+.hoofdmenu > ul > li> a{
+    padding: 0.5rem 3rem; /*breedte hoofdmenu*/
+    border-right: 1px solid;
+    /*border-bottom: 1px solid;*/
+}
+.hoofdmenu > ul > li:nth-child(4) >a{
+    border-right: none;
+}
+
+/*---- breedte submenu ------*/
+.hoofdmenu > ul > li > ul > li a {
+    padding: 0.5rem ;
+    width: 200px;
+
+}
+
+.submenu > ul > li {
+    width: 100%;
+}
+
+.hoofdmenu .submenu > ul {
+    display: none;
+}
+.hoofdmenu .submenu:hover > ul {
+    display: flex;
+}
+
+.hoofdmenu .submenu li > a{
+    background-color: var(--lichtergrijs);
+    margin: 0;
+    padding-bottom: 0.5rem ;
+
+}
+.hoofdmenu a:hover, .hoofdmenu .submenu li > a:hover{
+    background-color: var(--bijnawit);
+    color: var(--donkergrijs);
+}
+
+.hoofdmenu > ul > .submenu {
+    position: relative;
+}
+
+.hoofdmenu > ul > .submenu > ul {
+    position: absolute;
+}
+.hoofdmenu .actiefMenu{
+    background-color: var(--bijnawit);
+    color: var(--donkergrijs);
+}
+/*---- ------------------------  EINDE MENU ---------------------------------------------*/
+
+/*----------------------- EINDE Gemeenschappelijke layout alle pagina's ------------------------ */
+
+
+/*----------------------- Layout enkel voor Homepagina ----------------------------------- */
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* Main van homepagina: Grid (subgrid) */
+.grid-home-main {
+    display: grid;
+    grid-template-areas:    'ghomemain1 ghomemain1'
+                            'ghomemain2 ghomemain3';
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: max-content 1fr;
+    grid-column-gap: 20px;
+}
+
+.grid-home-main > .grid-main1{
+    grid-area: ghomemain1;
+}
+.grid-home-main > .grid-main2{
+    grid-area: ghomemain2;
+
+}
+.grid-home-main > .grid-main3{
+    grid-area: ghomemain3;
+}
+
+.grid-home-main img{
+    max-width: 100%;
+    height: auto;
+}
+.grid-main1{
+    margin-bottom: 2rem;
+}
+.grid-main2, .grid-main3{
+    max-width: 590px;
+}
+/*---------------------------------- Layout Producten ------------------------------*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+/*----------------- Hoofdgrid Body: anders dan andere pagina's, met aside) ------------*/
+.gridContainerBodymetAside {
+    display: grid;
+    grid-template-areas:    '. g2header g2header .'
+                            '. g2asside g2main .'
+                            '. g2footer g2footer .';
+    grid-template-columns: 1fr 180px minmax(auto,1020px) 1fr;
+    grid-template-rows: 120px 1fr 40px;
+    min-height: 96vh;
+
+}
+.gridContainerBodymetAside > .gridb2-item-header {
+    grid-area: g2header;
+}
+.gridContainerBodymetAside > .gridb2-item-asside {
+    grid-area: g2asside;
+    padding: 1rem 0 0 1rem ;
+}
+.gridContainerBodymetAside > .gridb2-item-main {
+    grid-area: g2main;
+    padding: 0;
+}
+.gridContainerBodymetAside > .gridb2-item-footer{
+    grid-area: g2footer;
+}
+
+.gridb2-item-asside h2{
+    font-size: 1rem;
+    font-weight: normal;
+}
+.filter {
+    list-style: none;
+    padding: 0;
+
+}
+.knop2dynamic{
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    text-decoration: none;
+    background-color: var(--lichtergrijs);
+}
+.knop2dynamic:hover{
+    color: var(--donkergrijs);
+    background-color: var(--bijnawit);
+}
+/*-----------------  flex voor de producten ---------------------*/
+.producten > section{
+    display:flex;
+    flex-wrap: wrap;
+}
+.producten > section > section{
+    max-width: 220px;
+    padding:0.5rem;
+    height: 450px;
+}
+.producten > section > section > h4{
+    /*display: block;*/
+    height: 4rem;
+}
+.producten h3 {           /*titel bovenaan*/
+    flex: 1 0 100%;
+}
+.producten h4{
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+/*------------------------------------ Layout Detail ---------------------*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.detail {
+    display: grid;
+    grid-template-columns: 400px minmax(150px,500px);
+    grid-template-rows: max-content max-content 1fr ;
+}
+.detail h2{
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+.detail img{
+    grid-column: 1/2;
+    grid-row: 2/4;
+}
+.beschrijving{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    margin: 0 1rem;
+}
+.prijs{
+    grid-column: 2/3;
+    grid-row: 3/4;
+    margin: 3rem 1rem;
+    font-size: 2rem;
+}
+/*------------------- Personaliseringspagina -----------------------*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+#form_pers {
+    /*margin: 10px ;*/
+}
+.gridContainerForm{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(320px,auto) max-content 50px;
+    grid-column-gap: 50px;
+    grid-row-gap: 10px;
+}
+#verzendknop{
+    width: 100px;
+}
+.gridFieldsetKnop{
+    grid-row: 3/4;
+}
+/*-------------- Aparte fieldsets --------------*/
+.gridContainerFieldset{
+    display:grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: auto/*repeat(auto-fit,2rem)*/;
+    grid-row-gap: 0.5rem;
+    margin: 0;
+    align-items: start;
+
+}
+.gridContainerFieldset img{
+    grid-column: 2/3;
+}
+#maat{                 /* Dit is een sub fieldset, geen border*/
+    border:none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+#aantal {
+    width: 2.5rem;
+    height: 1.2rem;
+    padding:0;
+}
+.foutFeedback{
+    grid-column: 2/3;
+    min-height: 1rem;
+}
+#foutemail{
+    min-height: 2rem;
+}
+#achternaam {
+    /*padding: 0;*/
+    background-color: yellow; /* Ondanks important heeft de ua stylesheet van Chrome nog voorrang */
+    /*appearance: ;*/
+
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: black;
+    -webkit-box-shadow: 0 0 0 1000px yellow inset;
+    transition: all 5000s ease-in-out 0s;
+}
+/*------------------------------------------------------------------------*/
+
+/*--------------------------------Bevestigingspagina ---------------------*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+#overzichtBestelling{
+    max-width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+#overzichtBestelling{
+    border-collapse: collapse;
+}
+#overzichtBestelling td{
+    border: 1px solid var(--bijnawit);
+    border-collapse: collapse;
+    padding: 0.3rem 0.3rem;
+    vertical-align:bottom;
+}
+#overzichtBestelling td:nth-child(1){
+    width: 170px;
+}
+#overzichtBestelling tr:nth-last-child(1){
+    height: 2.2rem;
+    font-weight: bold;
+    color: var(--blauw);
+    font-size: 1.1rem;
+}
+#vierkantje {
+    display: inline-block;
+    height: 1rem;
+    width: 2rem;
+    border: 1px solid;
+    border-color: var(--bijnawit);
+}
+#fotobev{
+    display: inline-block;
+    vertical-align: top;
+    padding:  0 1rem;
+}
+/*------------------------------------  Layout Faq  ----------------------*/
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+.gridContainerFaq {
+    display: grid;
+    grid-template-areas:    "gitemFaqTitel gitemFaqTitel"
+                            "gitem2 gitem3"
+                            "gitem4 . ";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50px max-content max-content;
+    grid-column-gap: 50px;
+    grid-row-gap: 10px;
+
+}
+.gridContainerFaq > .gridTitel{
+    grid-area: gitemFaqTitel;
+}
+.gridContainerFaq > .gridFaq-Item1{
+    grid-area: gitem2;
+}
+.gridContainerFaq > .gridFaq-Item2{
+    grid-area: gitem3;
+}
+.gridContainerFaq > .gridFaq-item3{
+    grid-area: gitem4;
+    margin-top: 1rem;
+}
+
+.gridContainerFaq dt{ /* vraag */
+    font-size: 1.1rem;
+    text-decoration: underline;
+}
+.gridContainerFaq dd{
+    padding: 0.5rem 0.5rem;
+    margin:0;
+
+}
+
+.gridContainerFaq section{
+    border-width: 1px;
+    border-color: var(--bijnawit);
+    border-style: solid;
+    padding-left:0.5rem;
+    padding-right: 0.5rem;
+}
+
+/*-------------------------------------  Layout Contact  ----------------------*/
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.gridContainerContact {
+    display: grid;
+    grid-template-areas:    "gCoTi          gCoTi"
+                            "gContactitem1 gContactKl"
+                            "gContactKaart . ";
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 50px max-content max-content max-content;
+    grid-column-gap: 50px;
+
+
+}
+.gridContainerContact > .gridContactTitel{
+    grid-area: gCoTi;
+}
+
+.gridContainerContact > .gridContact-Winkelinfo{
+    grid-area: gContactitem1;
+}
+.gridContainerContact > .gridContact-Kaart{
+    grid-area: gContactKaart;
+}
+/*.gridContainerContact > .gridContact-Item3{
+    grid-area: gContactitem3;
+}*/
+.gridContainerContact > .gridContact-Klantendienst{
+    grid-area: gContactKl;
+}
+
+.gridContainerContact  section{
+    border-width: 1px;
+    border-color: var(--bijnawit);
+    padding-left:0.5rem;
+    padding-right: 0.5rem;
+}
+.gridContact-Winkelinfo { /*Deze sectie samen met kaart in kader*/
+    border-style: solid;
+    border-bottom-style: none;
+}
+.gridContact-Kaart{
+    border-style: solid;
+    border-top-style: none;
+}
+.gridContact-Klantendienst{
+    border-style: solid;
+}
+/*------ iframe Google Maps -----------------*/
+.kaart {
+    height: 550px;
+    width: 550px;
+}
+
+
+
+
+/*+++++++++++++++++++++ todo: geen todo maar nu valt dit wel meer op ++++++++++++++++++++++++++++++*/
+/*----------------------------------- responsive: Mediaqueries ------------------------------*/
+/*++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+@media screen and (max-width: 900px) {
+    html{
+        font-size: 0.8rem;
+    }
+
+    /*---------------------------------- Menu ----------------------- */
+
+    .hoofdmenu > ul > li> a {
+        padding: 0.5rem 1.5rem; /*breedte hoofdmenu*/
+    }
+
+    /*--------------------------------- Home -------------------------*/
+    .grid-home-main {
+        grid-template-areas:    'ghomemain1 '
+                                'ghomemain2 '
+                                'ghomemain3';
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content 1fr;
+
+    }
+    /*------------------------- Producten -----------------------------*/
+
+    .gridContainerBodymetAside {
+        grid-template-areas:    '. g2header .'
+                                '. g2asside .'
+                                '. g2main   .'
+                                '. g2footer .';
+        grid-template-columns: 1fr minmax(auto,1020px) 1fr;
+        grid-template-rows: 120px max-content 1fr 40px;
+
+    }
+    .producten > section > section{
+        max-width: 200px;
+        padding:0.2rem;
+        height: 400px;
+    }
+    .producten > section > section img{
+        max-width:100% ;
+    }
+    /*------------------------- Detail ------------------------------*/
+    .detail {
+        grid-template-columns: minmax(150px, 500px);
+        grid-template-rows: max-content max-content max-content 1fr;
+    }
+    .detail h2{
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    .detail img{
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    .beschrijving{
+        grid-column: 1/2;
+        grid-row: 3/4;
+        margin:1rem 0;
+    }
+    .prijs {
+        grid-column: 1/2;
+        grid-row: 4/5;
+        margin: 1rem 0.5rem;
+        font-size: 1.8rem;
+
+    }
+    /*------------------------- Personalisering ------------------------------*/
+    .gridContainerForm{
+        display:grid;
+        grid-template-columns: 1fr ;
+        grid-template-rows: minmax(320px,auto) auto auto auto;
+        grid-column-gap: 50px;
+        grid-row-gap: 10px;
+    }
+
+    .gridFieldsetKnop{
+        grid-row: 4/5;
+    }
+    /*--------------------------- Bevestiging -------------------------------*/
+    #fotobev{
+        display:block;
+        padding: 1rem 0;
+    }
+
+}
+@media screen and (max-width: 1000px) {
+    /*------------------------- FAQ ---------------------------------*/
+    .gridContainerFaq {
+        grid-template-areas:    "gitemFaqTitel"
+                                "gitem2 "
+                                "gitem3 "
+                                "gitem4 ";
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px max-content max-content 1fr;
+    }
+    .gridContainerFaq > .gridFaq-item3{
+        margin-top: 0;
+    }
+    /*-------------------------- Contact -----------------------------*/
+    .gridContainerContact {
+        grid-template-areas:"gCoTi          "
+                            "gContactitem1 "
+                            "gContactKaart"
+                            "gContactKl  ";
+        grid-template-columns: max-content;
+        grid-template-rows: 50px max-content max-content max-content max-content;
+    }
+    .kaart {
+        height: 400px;
+        width: 400px;
+    }
+    .gridContact-Klantendienst{
+        margin-top: 1rem;
+    }
+}

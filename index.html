@@ -3,46 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Berkenloop</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
-    <link rel="stylesheet" href="css/hoofdstijl.css">
+    <title>Bike-Wear - Fietskleding</title>
+    <link rel="icon" sizes="16x16 32x32" type="image/png" href="media/favicon.ico">
+    <link rel="stylesheet" href="css/project.css">
 
 </head>
-<body class="gridContBody">
-    <h1>Berkenloop</h1>
-<main class="gridMainCont">
 
-    <article>
-        <h2>Inschrijving</h2>
-            <!--<a href="https://docs.google.com/forms/d/e/1FAIpQLSdPKepylbMYQGgZdU9vaXUkBVW093FCe6AzRwkvdSVfjTjJrw/viewform?usp=sf_link">Inschrijven</a>-->
-        <script type="text/javascript">var submitted=false;</script>
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted)  {window.location='html/bevestiging.html';}"></iframe>
+<body class="gridContainerBody">
+<h1 class="verborgen">Homepagina</h1>
 
+<!----------------------------- Header: Topheader, Logoheader en Menu ---------------------------------->
+<header class="gridb-item-header">
+    <section class="grid-header">
+        <h2 class="verborgen">Pagina-header</h2>
+        <!------------------------- Topheader -------------------------------------------------->
+        <section class="grid-header1">
+            <h3 class="verborgen">Topheader</h3>
+            <ul>
+                <li><a href="html/faq.html#verzendingskosten">Gratis verzending vanaf &euro; 50</a></li>
+                <li><a href="html/faq.html#levertijd">Voor 22u besteld morgen in huis</a></li>
+            </ul>
+        </section>
+        <section class="grid-header2">
+            <h3 class="verborgen">Logoheader</h3>
+            <!--- Logo = home-link -->
+            <a> <img src="media/logo_bikewear_200x45.png" alt="Bike Wear logo"/></a>
+            <!--<form>
+                &lt;!&ndash;- zoekformulier Milestone 7 -&ndash;&gt;
+            </form>-->
+        </section>
+        <!------------------------- Menu ---------------------------------------------------------->
+        <nav class="hoofdmenu">
+            <h3 class="verborgen">Hoofdmenu</h3>
+            <ul>
+                <li class="submenu"><a class="eerstemenu" href="html/product.html">Producten</a>
+                    <ul>
+                        <li><a href="html/product.html#truitjes">Truitjes en Jassen</a></li>
+                        <li><a href="html/product.html#broeken">Broeken</a></li>
+                        <li><a href="html/product.html#accessoires">Accessoires</a></li>
+                    </ul>
+                </li>
+                <li><a href="html/personalisering.html">Personaliseren</a></li>
+                <li><a href="html/faq.html">FAQ</a></li>
+                <li><a href="html/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+</header>
 
-        <form id="inschrijving" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdPKepylbMYQGgZdU9vaXUkBVW093FCe6AzRwkvdSVfjTjJrw/formResponse" method="post" target="hidden_iframe"
-              onsubmit="submitted=true;">
-                <fieldset class="gridContForm">
-<!--                    <legend>Inschrijving</legend>-->
-                    <label for="naam">Naam en Voornaam</label>
-                    <input type="text" id="naam" name="entry.1485118755" required>
-                    <label for="strava">Adres</label>
-                    <input type="text" id="strava" name="entry.346604813" required>
-                    <label for="email">email</label>
-                    <input type="email" id="email" name="entry.791737043" required> <!--entry.791737043-->
-                    <label>Afstand</label>
-                    <fieldset id="afstand">
-                        <legend class="verborgen">Maat</legend>
-                        <label for="5km"><input id="5km" type="radio" name="entry.897293074_sentinel" value="5 km">5 km</label>
-                        <label for="10 km"><input id="10 km" type="radio" name="entry.897293074_sentinel" value="10 km">10 km</label>
-                    </fieldset>
-                </fieldset>
-                <input type="submit" value="Verzend">
-            </form>
-    </article>
-    <aside>
-        <h2>Kaart</h2>
-        <img class="kaart" src="media/Berkenloop kaart 2.png" alt="kaartje"/>
-    </aside>
+<main class="gridb-item-main">
+<article class="grid-home-main">
+    <h2 class="verborgen">main</h2>
+        <section class="grid-main1">
+            <h3 class="verborgen">Beschrijving producten</h3>
+            <img src="media/foto_home_1_1200x675.jpg" alt="Foto 1">
+            <p>Bij ons vind je een selectie fietskleding en accessoires van uitstekende kwaliteit. In ons gamma zitten onder andere de merken Sportful, Castelli en Canyon. Exclusief kan je bij ons ook kleding van Canyon personaliseren.</p>
+        </section>
+        <section class="grid-main2">
+            <h3>Jouw naam, clubnaam en/of logo op je kleding?</h3>
+            <img src="media/foto_home_2_550x367.jpg" alt="Foto Close Up Kleding">
+            <p>Een aantal van onze producten kan je personaliseren met tekst en logo naar keuze. Ideaal om een kwaliteitsvolle ploegoutfit aan te schaffen. Voor grote bestellingen rekenen we flinke kortingen.</p>
+        </section>
+        <section class="grid-main3">
+            <h3>Wie zijn wij?</h3>
+            <img src="media/foto_home3_mtb_550x367.jpg" alt="Foto Pauline op de Lux, uitstekende fiets">
+            <p>Zelf zijn we gepassioneerde fietsers, een dag niet gefietst is een verloren dag ;-) of het moest fietsonderhoudsdag zijn. We vonden dat er nog een shop ontbrak die kleding van verschillende merken kon personaliseren. De foto's zijn van het Canyon-Sram Team met Pauline Ferrand-Prévot. In 2015 was zij regerend wereldkampioen in het wegwielrennen, veldrijden en mtb crosscountry. De enige (van mannen en vrouwen) die dit ooit geflikt heeft. De nog betere versie van Mathieu van der Poel bij de vrouwen dus. Op 10 oktober 2020 werd ze voor de 3de keer wereldkampioen in het mtb xc.</p>
+        </section>
+</article>
 </main>
+
+<footer class="gridb-item-footer">
+    <section>
+        <h2 class="verborgen">Pagina-footer</h2>
+        <p> &copy; 2020 Bike Wear. Alle rechten voorbehouden. Webdesign en beheer door <a href="https://www.youtube.com/watch?v=AnuZFB45lBY">De Marmotten</a>.</p>
+    </section>
+</footer>
+
 </body>
 </html>

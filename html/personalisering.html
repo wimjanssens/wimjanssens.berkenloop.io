@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bike-Wear - Personaliseren</title>
+    <link rel="icon" sizes="16x16 32x32" type="image/png" href="../media/favicon.ico">
+    <link rel="stylesheet" href="../css/project.css">
+    <script src="../script/form_validation.js"></script>
+
+</head>
+<body class="gridContainerBody">
+<h1 class="verborgen">Personaliseren</h1>
+<!----------------------------- Header: Topheader, Logoheader en Menu ---------------------------------->
+<header class="gridb-item-header">
+    <section class="grid-header"> <!-- Zonder deze section klopt de outline niet, want header is een flow element. Geen sectioning element-->
+        <h2 class="verborgen">Header</h2>
+        <!------------------------- Topheader -------------------------------------------------->
+        <section class="grid-header1">
+            <h3 class="verborgen">Topheader</h3>
+            <ul>
+                <li><a href="faq.html#verzendingskosten">Gratis verzending vanaf &euro; 50</a></li>
+                <li><a href="faq.html#levertijd">Voor 22u besteld morgen in huis</a></li>
+            </ul>
+        </section>
+        <section class="grid-header2">
+            <h3 class="verborgen">Logoheader</h3>
+            <!--- Logo = home-link -->
+            <a href="../index.html"> <img src="../media/logo_bikewear_200x45.png" alt="Bike Wear logo"/></a>
+            <form>
+                <!--- zoekformulier Milestone 7 --->
+            </form>
+        </section>
+        <!------------------------- Menu ---------------------------------------------------------->
+        <nav class="hoofdmenu">
+            <h3 class="verborgen">Hoofdmenu</h3>
+            <ul>
+                <li class="submenu"><a href="product.html">Producten</a>
+                    <ul>
+                        <li><a href="product.html#truitjes">Truitjes en Jassen</a></li>
+                        <li><a href="product.html#broeken">Broeken</a></li>
+                        <li><a href="product.html#accessoires">Accessoires</a></li>
+                    </ul>
+                </li>
+                <li><a class="actiefMenu">Personaliseren</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+</header>
+<main class="gridb-item-main">
+    <article>
+        <h2>Personaliseren</h2>
+            <form class="gridContainerForm" id="form_pers" action="bevestiging.html" method="get" >
+                <fieldset>
+                    <legend>Artikel kiezen</legend>
+                    <div class="gridContainerFieldset"> <!-- DIV nodig voor grid in form (bug in Chrome?) -->
+                            <label for="artikel">Artikel</label>
+                        <select id="artikel" name="artikel" autofocus>
+                            <!--<option value="">Kies een artikel</option>-->
+                            <option value="shirt1">Castelli Pro mannen (&euro;100)</option>
+                            <option value="shirt2">Sportful Mono mannen (&euro;70)</option>
+                            <option value="shirt3">Sportful Diva vrouwen (&euro;59)</option>
+                            <option value="shirt4">NW Kids (&euro;40)</option>
+                            <option value="muts">Muts (&euro;28)</option>
+                        </select>
+                        <img id="fotoform" src="" alt=""/>
+
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Artikel aanpassen</legend>
+                    <div class="gridContainerFieldset"> <!-- DIV nodig voor grid in form (bug in Chrome?) -->
+                        <label>Maat</label>
+                        <fieldset id="maat">
+                            <legend class="verborgen">Maat</legend>
+                            <label for="maats"><input id="maats" type="radio" name="maat" value="Small">S</label>
+                            <label for="maatm"><input id="maatm" type="radio" name="maat" value="Medium">M</label>
+                            <label for="maatl"><input id="maatl" type="radio" name="maat" value="Large">L</label>
+                            <label for="maatxl"><input id="maatxl" type="radio" name="maat" value="XL">XL</label>
+                            <label for="maat2xl"><input id="maat2xl" type="radio" name="maat" value="2XL">2XL</label>
+                        </fieldset>
+                        <label for="lijn">Tekstlijn (&euro;10)</label>
+                        <input id="lijn" name="lijn" type="text" maxlength="30">
+                        <label for="lijngrootte">Lettergrootte</label>
+                        <input id="lijngrootte" name="lijngrootte" type="range" min="8" max="30" step="2">
+                        <label for="tekstkleur">Tekstkleur</label>
+                        <input id="tekstkleur" name="tekstkleur" type="color" value="#1a74e3">
+                        <label for="logoupload">Logo Uploaden (&euro;10)</label>
+                        <input id="logoupload" name="logoupload" type="file" accept="image/*">
+                        <label for="aantal">Aantal</label>
+                        <input id="aantal" name="aantal" type="number" value="1" min="1" max="20">
+                    </div>
+                </fieldset>
+                    <fieldset>
+                    <legend>Naam en adres</legend>
+                    <div class="gridContainerFieldset"><!-- DIV nodig voor grid in form (bug in Chrome?) -->
+                        <label for="voornaam">Voornaam</label>
+                        <input id="voornaam" name="voornaam" type="text">
+                        <!--<span class="foutFeedback"></span>-->
+                        <label for="achternaam">Achternaam</label>
+                        <input id="achternaam" name="achternaam" type="text">
+                        <span class="foutFeedback" id="foutachternaam"></span>
+                        <label for="adres">Adres</label>
+                        <input id="adres" name="adres" type="text" placeholder="Crankstraat 34t 3078 Meerbeek">
+                        <!--<span class="foutFeedback"></span>-->
+                        <label for="email">email</label>
+                        <input id="email" name="email" type="text">
+                        <span class="foutFeedback" id="foutemail"></span>
+                    </div>
+                </fieldset>
+
+                <div class="gridFieldsetKnop">
+                    <input id="verzendknop" name="verzendknop" type="submit" value="Verzend">
+                    <span id="foutVerzendKnop" ></span>
+                </div>
+
+            </form>
+    </article>
+
+</main>
+
+<footer class="gridb-item-footer">
+    <section>
+        <h2 class="verborgen">Pagina-footer</h2>
+        <p> &copy; 2020 Bike Wear. Alle rechten voorbehouden. Webdesign en beheer door <a href="https://www.youtube.com/watch?v=AnuZFB45lBY">De Marmotten</a>.</p>
+    </section>
+</footer>
+
+</body>
+</html>
