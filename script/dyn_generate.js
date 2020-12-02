@@ -2,7 +2,6 @@ addEventListener('load', init)
 var richting="normaal";
 function init() {
 
-    console.log("init");
     printPagina();
 
 
@@ -50,7 +49,6 @@ class Categorie{
         for (; t !== einde;t += stap){
 
             if ( +productArray[t][0] === +(this.i)+1){
-                console.log("if ok Categorie");
                 let product = new Product(productArray[t][1],productArray[t][2],productArray[t][3]);
                 htmlStringCat += product.maakHTMLProduct();
             }
@@ -66,8 +64,6 @@ function printPagina(){
     let i = +0;
     let einde = categorieArray.length;
     let mainElement = document.querySelector("#mainProduct");
-
-    console.log("printPagina");
 
     let htmlString = "";
     htmlString = "<a class=\"knop2dynamic\" href=\"product_static.html\">Statische productpagina</a>\n" +
@@ -87,7 +83,6 @@ function printPagina(){
     }
 
     for (; i !== einde ; i += stap){
-        console.log("for print");
         let categorie = new Categorie(i);
         htmlString += categorie.maakHTMLCategorie();
 
